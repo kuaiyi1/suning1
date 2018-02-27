@@ -40,6 +40,15 @@
 	padding: 0 10px;
 	
 }
+.black-cover1{
+	position: absolute;
+	width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .15;
+    background: #000;
+}
 .daohang_item span{
 	color: #666;
 	float: left;
@@ -70,15 +79,17 @@
     background: #000;
     opacity: .5;
 }
-.shengxian_right_middle span{
+.bofanganniu{
+	
+    display: block;
+   	width: 52px;
+	height: 52px;
+	background-image: url('img/index.png');
+	background-position: -190px 0;
 	position: absolute;
     top: 80px;
     left: 170px;
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url('img/index.png') ;
-    background-position:-190px 0 ;
+    z-index: 999;
 }
 .daohang_item h1{
 	float: left;
@@ -214,7 +225,7 @@
 }
 .product_right{
    
-	
+	height: 38px;
 	float: right;
 }
 .product_right img{
@@ -238,7 +249,7 @@
 	float: left;
 	position: absolute;
 	top: 0;
-	left: 0px;
+	left: 0;
 /* zhel */
 }
 .banner-middle-left li{
@@ -724,6 +735,7 @@
 .suning{
 	width: 100%;
 	background-color: #F5F5F5;
+	height: auto;
 }
 .suning-tupian{
 	width: 1190px;
@@ -767,6 +779,13 @@
 	border-bottom: 2px solid #dd2726;
 
 }
+.shuxian{
+	width: 1px;
+	height: 140px;
+	padding-bottom: 20px;
+	background-color: #EEEEEE;
+	float: left;
+}
 .juhui_title_left{
 	width: 175px;
 	height: 43px;
@@ -809,7 +828,7 @@
 	float: left;
 }
 .juhui_tuwen_left_item_top{
-	width: 160px;
+	width: 199px;
 	height: 160px;
 	
 	position: relative;
@@ -817,9 +836,10 @@
 .juhui_img1{
 	width: 159px;
 	height: 160px;
-	
+	float: left;
 	padding: 0 20px;
-	border-right: 1px solid #333 ;
+	display: block;
+	/* border-right: 1px solid #333 ; */
 }
 .juhui_img2{
 	width: 36px;
@@ -1108,6 +1128,7 @@
 	width: 369px;
      margin-top: 10px;
     padding: 0 10px 0 11px;
+    position: relative;
 }
 .three_item_bottom_content_top{
 
@@ -1345,7 +1366,7 @@
 	float: left;
 	
 	position: relative;
-	transition: all .10s linear;
+	transition: all .5s linear;
 }
 .shengxian_left ul .li2{
 	
@@ -1401,7 +1422,7 @@
 	height: 350px;
 	float: left;
 	margin-left: 10px;
-	background-color: yellow;
+	
 }
 .shengxian_right_title{
 	width: 390px;
@@ -1419,7 +1440,7 @@
 .shengxian_right_middle{
 	width: 390px;
 	height: 227px;
-	background-color: blue;
+	
 	position: relative;
 }
 .shengxian_right_middle{
@@ -1432,6 +1453,16 @@
 }
 .banner-middle-middle:hover  .banner_btn {
 	opacity: 1;
+}
+.bofang1{
+	position: absolute;
+    top: 18px;
+    left: 51px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url('img/index.png');
+    background-position: -252px 0;
 }
 .haier{
 	width: 1190px;
@@ -1708,6 +1739,18 @@
     font-size: 18px;
     line-height: 40px;
     color: #ffffff;
+	float: left;
+}
+.erweima{
+	position: relative;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 10px 0 0 10px;
+    background-image: url('img/index.png'); 
+    background-position:  -232px -209px;
+  	z-index: 1;
+  	background-color: #333;
 }
 .zhinengshuma_title_right{
 	float: right;
@@ -1776,6 +1819,7 @@
     border-width: 0 0 1px 1px;
     border-color: #EEE;
     border-style: solid;
+    transition: transform .5s linear;
    
 }
 .zhinengshuma_content_right_name{
@@ -1907,6 +1951,40 @@
 	height: 20px;
 	background-color: #f5f5f5;
 }
+.code{
+	
+	opacity: 0;
+	position: absolute;
+    top: 35px;
+    left: -49px;
+    width: 120px;
+    height: 130px;
+    background: #FFF;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+}
+.jianjiao{
+	position: absolute;
+    width: 10px;
+    height: 8px;
+    top: -7px;
+    left: 56px;
+    background: url('img/index.png?v=20180204') -267px -210px;
+}
+.code img{
+	display: block;
+    width: 100px;
+    height: 100px;
+    margin: 6px auto 0;
+}
+.code p{
+	float: none;
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;}
 .biqangqingdan{
 	width: 590px;
 	height: 385px;
@@ -2363,7 +2441,7 @@ body{
     margin: 0 10px 0 0;
     overflow: hidden;
     background: #6ea166;
-    transition: transform .10s linear: 
+    transition: transform .5s linear; 
 }
 .name3{
 	font-weight: bold;
@@ -2453,7 +2531,7 @@ body{
 	cursor: pointer;
 }
 .juhui_img1:hover,.zhinengshuma_content_right img:hover,.like_content1 li img:hover{
-	transform:  scale(1.1,1.1);
+	transform:  scale(1.05,1.05);
 }
 .juhui_tuwen_left_item_top:hover{
 	transition: all .5s liner;
@@ -2462,7 +2540,7 @@ body{
 	background: #c72c2c;
 }
 .shengxian_left ul li img:hover,.shengxian_zuihou li img:hover{
-	transform: translateX(-30px);
+	transform: translateX(-10px);
 }
 .zhinengshuma_title_left1{
 	background: #33ae75;
@@ -2495,4 +2573,42 @@ body{
 }
 .juhui_img3{
 	border: none;
+}
+.three_left{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 41px;
+    height: 69px;
+    text-align: center;
+    line-height: 69px;
+    color: white;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, .4);
+    overflow: hidden;
+    opacity: 0;
+}
+.three_right{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 41px;
+    height: 69px;
+    text-align: center;
+    line-height: 69px;
+    color: white;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, .4);
+    overflow: hidden;
+    opacity: 0;
+}
+.three_item_bottom_content:hover .three_left ,.three_item_bottom_content:hover .three_right{
+	opacity: 1;
+}
+.erweima:hover .code{
+	opacity: 1;
 }
