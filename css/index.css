@@ -257,9 +257,9 @@
 	
 }
 .banner{
-	width: 100%;
+	width: 1190px;
 	height: 440px;
-	background-color: red;
+	margin: 0 auto;
 	position: relative;
 	
 }
@@ -692,7 +692,7 @@
 	float: left;
 	
 	position: absolute;
-	left: 80px;
+	left: 0;
 	top: 0px;
 }
 .daohang_right span:hover{
