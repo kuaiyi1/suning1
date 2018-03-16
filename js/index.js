@@ -65,6 +65,25 @@ pre.onclick=function(){
 	ele.addEventListener("transitionend",function(){
 	flag=true;
 	})})
+
+
+	let lis=document.querySelectorAll(".banner-middle-left li");
+	let dispalys=document.querySelectorAll(".banner_display");
+	console.log(lis);
+	let obj=lis[0];
+	lis.forEach(
+		function(ele,index){
+			ele.onmouseenter=function(){
+				obj.classList.remove=".active1";
+				ele.classList.add=".active1";
+				obj=ele;
+				dispalys[index].style.display="block";
+
+			}
+			ele.onmouseleave=function(){
+				dispalys[index].style.display="none";
+			}
+		});
 	
 }
 //顶部栏的出现
@@ -74,7 +93,7 @@ pre.onclick=function(){
 	let float_bottom=document.querySelector(".float_bottom");
 	let lists=document.querySelectorAll(".list li");
 	let twos=document.querySelectorAll(".two");
-
+	let rights=document.querySelector(".right_bar_bottom i.rights6");
 	window.onscroll=function(){
 		let str=document.documentElement.scrollTop;
 		if(str>1139){
@@ -96,6 +115,16 @@ pre.onclick=function(){
 					document.documentElement.scrollTop=str;
 			},50)
 		}
+		rights.onclick=function(){
+			let t=setInterval(function(){
+				str-=200;
+				if(str<0){
+					clearInterval(t);
+				}
+					document.documentElement.scrollTop=str;
+			},50)
+		}
+
 	}
 	lists.forEach(function(ele,index){
 		ele.onclick=function(){
@@ -154,7 +183,7 @@ pre.onclick=function(){
 	lefts.onclick=function(){
 		num--;
 		if(num<0){
-			num=lists.length-1;
+			num=0;
 		}
 		obj.classList.remove("active");
 		h2s[num].classList.add("active");
@@ -164,7 +193,7 @@ pre.onclick=function(){
 	rights.onclick=function(){
 		num++;
 		if(num>lists.length-1){
-			num=0;
+			num=lists.length-1;
 			// contents.style.marginLeft=0;
 		}
 		obj.classList.remove("active");
@@ -201,14 +230,114 @@ pre.onclick=function(){
 {
 	let  is=document.querySelectorAll(".right_bar_middle i");
 	let ps=document.querySelectorAll(".right_bar_middle p");
+	let spans=document.querySelectorAll(".right_bar_middle span")
 	is.forEach(function(ele,index){
 
 		ele.onmouseenter=function(){
+			ele.style.display="none";
+			ele.style.background="red";
+			spans[index].style.display="block";
 			ps[index].style.left="-35px";
+			ps[index].style.color="#383838";
+			ps[index].style.background="#FFAA01";
 		}
 		ele.onmouseleave=function(){
+			ele.style.display="block";
+			ele.style.background="";
+			spans[index].style.display="none";
 			ps[index].style.left="35px";
+			ps[index].style.color="";
+			ps[index].style.background="";
 		}
 	})
+	let is1=document.querySelectorAll(".right_bar_bottom i");
+	let ps1=document.querySelectorAll(".right_bar_bottom p");
+	let spans1=document.querySelectorAll(".right_bar_bottom span");
+	is1.forEach(function(ele,index){
+
+		ele.onmouseenter=function(){
+			ps1[index].style.left="-70px";
+		}
+		ele.onmouseleave=function(){
+			ps1[index].style.left="70px";
+		}
+	})
+	let lefts=document.querySelector(".three_left1");
+	let rights=document.querySelector(".three_right1");
+	let contents=document.querySelector(".lepingou_contents");
+	let lepingous=document.querySelectorAll(".lepingou_content");
+	let num=0;
+	
+	
+	lefts.onclick=function(){
+		num--;
+		if(num<0){
+			num=0;
+		}
+		
+		contents.style.marginLeft=-590*num+"px";
+	}
+	rights.onclick=function(){
+		num++;
+		if(num>lepingous.length-1){
+			num=lepingous.length-1;
+			// contents.style.marginLeft=0;
+		}
+		
+		
+		contents.style.marginLeft=-590*num+"px";	
+	}
+
+}
+{
+	let items=document.querySelectorAll(".daohang_item");
+	let displays=document.querySelectorAll(".daohang_display");
+	let h1s=document.querySelectorAll(".daohang_item h1");
+	items.forEach(function(ele,index){
+	    ele.onmouseenter=function(){
+	    	ele.style.border="1px solid #ccc";
+	    	h1s[index].style.transform="rotate(180deg)"
+	    	displays[index].style.display="block";
+	    	displays[index].style.height="120px";
+	    	displays[index].style.top="35px";
+	    }
+	    ele.onmouseleave=function(){
+	    	ele.style.border="none";
+	    	h1s[index].style.transform="rotate(0deg)"
+	    	displays[index].style.display="none";
+	    	displays[index].style.height="0";
+	    	displays[index].style.top="0";
+	    	
+	    }
+	})
+}
+//大聚惠开始
+{
+	let lefts=document.querySelector(".juhui_left");
+	let rights=document.querySelector(".juhui_right");
+	let contents=document.querySelector(".juhui_tuwen_lefts");
+	let left1=document.querySelectorAll(".juhui_tuwen_left1");
+	let num=0;
+	
+	
+	lefts.onclick=function(){
+		num--;
+		if(num<0){
+			num=0;
+		}
+		
+		contents.style.marginLeft=-1000*num+"px";
+	}
+	rights.onclick=function(){
+		num++;
+		if(num>left1.length-1){
+			num=left1.length-1;
+			// contents.style.marginLeft=0;
+		}
+		
+		
+		contents.style.marginLeft=-1000*num+"px";	
+	}
+
 
 }
