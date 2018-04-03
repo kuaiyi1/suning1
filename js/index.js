@@ -185,7 +185,7 @@
 	let lists=document.querySelectorAll(".three_item_bottom_content");
 	let h2s=document.querySelectorAll(".three_item_bottom_content_bottom h2");
 	let num=1;
-	console.log(lefts);
+	// console.log(lefts);
 	let obj=h2s[0];
 	let j=0;
 	var flag=true;
@@ -201,11 +201,13 @@
 		if(j<0){
 			j=2;
 		}
+		
 		contents.style.transition="all 1s";
 		obj.classList.remove("active");
 		h2s[j].classList.add("active");
 		obj=h2s[j];
 		contents.style.marginLeft=-390*num+"px";}
+
 	}
 	rights.onclick=function(){
 		if(flag&&flag1){
@@ -216,6 +218,7 @@
 		if(j==3){
 			j=0;
 		}
+		
 		obj.classList.remove("active");
 		h2s[j].classList.add("active");
 		obj=h2s[j];
@@ -231,10 +234,11 @@
 				obj=ele;
 				contents.style.transition="all 1s";
 				contents.style.marginLeft=-390*(index+1)+"px";
-				
-			}
-			num=index+1;
+				// num=index;
 
+			}
+			
+			// console.log(index);
 			
 	})
 	contents.addEventListener("transitionend",function(){
@@ -271,6 +275,35 @@
 		ele.onmouseleave=function(){
 			img2s[index].style.display="none";
 		}
+	})
+}
+//上下移动
+{
+	let mis=document.querySelector(".banner-middles");
+	// console.log(mis);
+	let mis1=document.querySelectorAll(".banner-middle-right-middle");
+	setInterval(updown,3000);
+	var y=0;
+	function updown(){
+		y++;
+		if(y>2){
+			mis.style.transition="";
+			y=0;
+
+			return;
+		}
+		mis.style.transition="all 1s";
+		mis.style.marginTop=-100*y+"px";
+		
+
+	}
+	mis.addEventListener("transitionend",function(){
+		if(y==2){
+			
+			mis.style.transition="";
+			mis.style.marginTop=0;
+		}
+		
 	})
 }
 //右边弹出
@@ -359,15 +392,30 @@
 
 }
 {
+	let liss=document.querySelectorAll(".shengxian_right_bottom li");
+	let imgss=document.querySelectorAll(".shengxian_right_middle img");
+	console.log(imgss);
+	var obj=imgss[0];
+	liss.forEach(function(ele,index){
+			ele.onmouseenter=function(){
+				obj.classList.remove('active');
+				imgss[index].classList.add('active');
+				obj=imgss[index];
+			}
+	})
+}
+{
 	let items=document.querySelectorAll(".daohang_item");
 	let displays=document.querySelectorAll(".daohang_display");
 	let h1s=document.querySelectorAll(".daohang_item h1");
-	console.log(h1s);
+	// console.log(h1s);
 	items.forEach(function(ele,index){
 	    ele.onmouseenter=function(){
 	    
 
-	    ele.style.border="1px solid #ccc";
+	    ele.style.borderWidth="1px 1px 0 1px";
+	    ele.style.borderStyle="solid";
+	    ele.style.borderColor="#ccc";
 	    	
     		
 	    	h1s[index].style.transform="rotate(180deg)";
@@ -432,14 +480,20 @@
 
 
 }
-{
-	// $(".juhui_tuwen_lefts").mouseover(function(){
-	// 	 $(".juhui_left").fadeIn(500);
-	// 	 $(".juhui_right").fadeIn(500);
-	// })
-	// $(".juhui_tuwen_lefts").mouseleave(function(){
-	// 	 $(".juhui_left").fadeOut(500);
-	// 	 $(".juhui_right").fadeOut(500);
-	// })
 
+//二维码
+{
+	let ers=document.querySelectorAll(".erweima");
+	let codes=document.querySelectorAll(".code");
+	
+	ers.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			
+			codes[index].style.display="block";
+			
+		}
+		ele.onmouseleave=function(){
+			codes[index].style.display="none";
+		}
+	})
 }

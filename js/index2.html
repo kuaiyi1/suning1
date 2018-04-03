@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 800px;
+			height: 400px;
+			margin: 0 auto;
+			border: 1px solid red;
+		}
+		.item{
+			width: 200px;
+			height: 200px;
+			float: left;
+			position: relative;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+		.maskcontainer{
+			position: absolute;
+			width: 100%;
+			height: 40px;
+			overflow: hidden;
+			left: 0;
+			bottom: 0;
+		}
+		.mask{
+			width: 100%;
+			height: 100%;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: -200px;
+		}
+		@keyframes leftin{
+				0%{
+					top: 0;
+					left: -200px;
+				}
+				100%{
+					top: 0;
+					left: 0;
+				}
+		}
+		@keyframes rightin{
+				0%{
+					top: 0;
+					left: 200px;
+				}
+				100%{
+					top: 0;
+					left: 0;
+				}
+		}
+		@keyframes topin{
+				0%{
+					top: -40px;
+					left: 0;
+				}
+				100%{
+					top: 0;
+					left: 0;
+				}
+		}
+		@keyframes bottomin{
+				0%{
+					top: 40px;
+					left: 0;
+				}
+				100%{
+					top: 0;
+					left: 0;
+				}
+		}
+		.topin{
+			animation:topin .5s ease-in forwards;
+		}
+		.bottomin{
+			animation:bottomin .5s ease-in forwards;
+		}
+		.rightin{
+			animation:rightin .5s ease-in forwards;
+		}
+		.leftin{
+			animation:leftin .5s ease-in forwards;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask "></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="maskcontainer">
+				<div class="mask"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	// $(".container").on("click",".item","1",function(e){
+	// 	console.log(e.data);
+	// 	$(this).css("background","red");
+	// })
+	// 
+	//
+	 $(".item").data("isHover",false);
+	// 
+	let  n=0;
+	let lx,ly;
+	$(".item").mousemove(function(e){
+		n++;
+		let ox=e.offsetX;
+		let oy=e.offsetY;
+
+		if(n>1&&$(this).data("isHover")==false){
+				// console.log(ox,oy,lx,ly);	
+				$(this).data("isHover",true);
+				let result=Math.abs(ox-lx)>Math.abs(oy-ly)?"hov":"var";
+				if(result=="hov"){
+					if(ox>lx){
+
+						$(this).find(".mask").addClass("leftin");
+					}else{
+							$(this).find(".mask").addClass("rightin");
+					}
+				}else{
+					if(oy>ly){
+						$(this).find(".mask").addClass("topin");
+					}else{
+							$(this).find(".mask").addClass("bottomin");
+					}
+				}
+			}
+
+			lx=ox;
+			ly=oy;
+	
+	})
+	// $(".mask").on("animationend",function(){
+	// 	$(this).attr("class","mask");
+	// })
+</script>
+</html>
