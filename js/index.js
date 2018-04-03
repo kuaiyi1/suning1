@@ -136,6 +136,7 @@
 			let now=document.documentElement.scrollTop;
 			let speed=(ot-now)/8;
 			let time=0;
+
 			let t=setInterval(function(){
 				time+=25;
 				now+=speed;
@@ -143,6 +144,7 @@
 					document.documentElement.scrollTop=now;
 					flag=true;
 				}
+
 			},25)
 		}
 	})

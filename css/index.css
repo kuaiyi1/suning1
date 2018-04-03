@@ -2071,7 +2071,7 @@ body{
     height: 360px;
 } 
 .jiayong_content ul li{
-	width: 177px;
+	width: 199px;
 	height: 179px;
 	border-width: 0 1px 1px 0;
     border-color: #EEE;
@@ -2155,12 +2155,14 @@ body{
 	height: 30px;
 	cursor: pointer;
 }
+
 .two{
     width: 1190px;
     height: 565px;
     margin: 0 auto;
     margin-top: 20px;
     background-color: #f2f2f2;
+    transition: all 1s;
 }
 .zhinengshuma{
 	width: 590px;
