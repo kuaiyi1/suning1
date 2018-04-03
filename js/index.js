@@ -129,6 +129,7 @@
 		}
 
 	}
+
 	lists.forEach(function(ele,index){
 		ele.onclick=function(){
 			flag =false;
@@ -141,10 +142,10 @@
 				time+=25;
 				now+=speed;
 				if(time===200){
-					document.documentElement.scrollTop=now;
+					clearInterval(t);
 					flag=true;
 				}
-
+				document.documentElement.scrollTop=now;
 			},25)
 		}
 	})
@@ -498,4 +499,14 @@
 			codes[index].style.display="none";
 		}
 	})
+}
+{
+	let s=document.querySelector(".fix-left");
+	let l=document.querySelector(".banner-middle-left1");
+	s.onmouseenter=function(){
+		l.style.display="block";
+	}
+	s.onmouseleave=function(){
+		l.style.display="none";
+	}
 }

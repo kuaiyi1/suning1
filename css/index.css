@@ -6,6 +6,7 @@
   url('https://at.alicdn.com/t/font_563523_9tt66579jbw97ldi.ttf') format('truetype'),
   url('https://at.alicdn.com/t/font_563523_9tt66579jbw97ldi.svg#iconfont') format('svg');
 }
+
 .fix-bar{
 	width: 100%;
 	height: 50px;
@@ -379,6 +380,7 @@
     font-weight: bold;
     float: left;
     margin:6px 160px 6px 0;
+    position: relative;
 
 }
 .product_middle span h1{
@@ -3913,4 +3915,10 @@ body{
 .banner-middles{
     width: 170px;
     height: 345px;
+}
+.banner-middle-left1{
+    left: 0;
+    top: 38px;
+    height: 440px;
+    display: none;
 }
